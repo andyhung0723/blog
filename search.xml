@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[[Hexo] Hexo 環境建置]]></title>
+    <url>%2F2018%2F12%2F04%2F2018-12-04_Hexo%E7%92%B0%E5%A2%83%E5%BB%BA%E7%BD%AE%2F</url>
+    <content type="text"><![CDATA[開發環境12node.js：v10.14.1npm：6.4.1 Hexo 建置流程安裝CLI1npm install -g hexo-cli 初始化1hexo init &lt;folder&gt; 運行1hexo server 編譯出靜態網頁1hexo g 建立 GitHub PageGithub提供兩種靜態網站1. 儲存庫的名稱為{用戶名稱}.github.io此類型每個帳號只能有一個，路徑為 https://{用戶名稱}.github.io2. 任何專案下的gh-pages此類型沒有數量限制，路徑為 https://{用戶名稱}.github.io/{專案名稱} 建立儲存庫這邊新增一個以用戶名稱命名的儲存庫 將專案推到GitHub上12345git initgit add .git commit -m &quot;init&quot;git remote add origin https://github.com/AndyHung0723/AndyHung0723.github.io.gitgit push -u origin master 設定config.yml 安裝自動部屬工具1npm install hexo-deployer-git --save 部屬到GitHub1hexo d]]></content>
+      <categories>
+        <category>Hexo</category>
+      </categories>
+      <tags>
+        <tag>Hexo</tag>
+        <tag>GitHub</tag>
+        <tag>node.js</tag>
+      </tags>
+  </entry>
+</search>
