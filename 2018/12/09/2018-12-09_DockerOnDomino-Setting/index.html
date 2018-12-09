@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Docker,Domino Server,Domino10,">
+  <meta name="keywords" content="Docker,Domino Server,Domino10,Domino on Docker,Domino on Docker Container,">
 
 
 
@@ -81,17 +81,20 @@
 
 
 <meta name="description" content="將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。">
-<meta name="keywords" content="Docker,Domino Server,Domino10">
+<meta name="keywords" content="Docker,Domino Server,Domino10,Domino on Docker,Domino on Docker Container">
 <meta property="og:type" content="article">
 <meta property="og:title" content="[Docker] 建立 Domino Server Container">
 <meta property="og:url" content="http://yoursite.com/2018/12/09/2018-12-09_DockerOnDomino-Setting/index.html">
 <meta property="og:site_name" content="Andy&#39;s Notes">
 <meta property="og:description" content="將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-12-09T08:56:48.635Z">
+<meta property="og:image" content="https://i.imgur.com/nINskh6.png">
+<meta property="og:image" content="https://i.imgur.com/4JJqJ67.png">
+<meta property="og:updated_time" content="2018-12-09T09:38:02.751Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[Docker] 建立 Domino Server Container">
 <meta name="twitter:description" content="將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。">
+<meta name="twitter:image" content="https://i.imgur.com/nINskh6.png">
 
 
 
@@ -180,7 +183,7 @@
       </a>
     </div>
       
-        <p class="site-subtitle">學習心得分享</p>
+        <h1 class="site-subtitle" itemprop="description">學習心得分享</h1>
       
   </div>
 
@@ -331,7 +334,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[Docker] 建立 Domino Server Container</h1>
+          <h2 class="post-title" itemprop="name headline">[Docker] 建立 Domino Server Container</h2>
         
 
         <div class="post-meta">
@@ -416,14 +419,13 @@
         <blockquote class="blockquote-center"><p>將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。</p>
 </blockquote>
 <a id="more"></a>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>暌違五年，在今年10月IBM終於正式發布Doimno第10版。新版著重於三大特色：支援Node.js開發、可將Domino Server建立在Docker上以及在iPad上運行Domino等。而本文的內容是如何在Docker上建立Domino Server及運行。<br><br></p>
-<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>製作一個Docker Container，包含CentOS與Domino V10 Server。</p>
-<h6 id="註：本文只描述建置流程，並無相關原理與內容解釋。"><a href="#註：本文只描述建置流程，並無相關原理與內容解釋。" class="headerlink" title="註：本文只描述建置流程，並無相關原理與內容解釋。"></a>註：本文只描述建置流程，並無相關原理與內容解釋。</h6><p><br></p>
-<h1 id="OS環境"><a href="#OS環境" class="headerlink" title="OS環境"></a>OS環境</h1><ul>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>暌違五年，在今年10月IBM終於正式發布Doimno第10版。新版著重於三大特色：支援Node.js開發、可將Domino Server建立在Docker上以及在iPad上運行Domino等。而本文的內容是如何在Docker上建立Domino Server及運行。</p>
+<h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><p>製作一個Docker Container，包含 CentOS 與 Domino V10 Server，並成功在Docker上運行Domino Server。</p>
+<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><ul>
+<li>VirtualBox 虛擬機</li>
 <li>Ubuntu 18.04.1 LTS</li>
 </ul>
-<p><br></p>
-<h1 id="在Ubuntu上安裝Docker"><a href="#在Ubuntu上安裝Docker" class="headerlink" title="在Ubuntu上安裝Docker"></a>在Ubuntu上安裝Docker</h1><ol>
+<h2 id="在Ubuntu上安裝Docker"><a href="#在Ubuntu上安裝Docker" class="headerlink" title="在Ubuntu上安裝Docker"></a>在Ubuntu上安裝Docker</h2><ol>
 <li>參考Docker官方網站文件中安裝流程：<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a></li>
 <li><p>安裝後建議調整：</p>
 <ul>
@@ -436,15 +438,24 @@
 </ul>
 </li>
 </ol>
-<p><br></p>
-<h1 id="所需檔案"><a href="#所需檔案" class="headerlink" title="所需檔案"></a>所需檔案</h1><p><strong>需要先準備兩個資料夾，dom 與 dom_on_docker</strong></p>
+<h2 id="所需檔案"><a href="#所需檔案" class="headerlink" title="所需檔案"></a>所需檔案</h2><ol>
+<li><p>需要先準備兩個資料夾，dom 與 dom_on_docker</p>
 <ul>
 <li>dom：包含Domino Server壓縮檔(tar)</li>
-<li>dom_on_docker：包含domino10與setupdomino兩個目錄，內容為產生image用的Dockerfile、相關Script與ServerConfig</li>
+<li><p>dom_on_docker：包含domino10與setupdomino兩個目錄，內容為產生image用的Dockerfile、相關Script與ServerConfig</p>
+<p>相關檔案在網路上都有善心人士撰寫好並提供，下載網址：<a href="https://www.eknori.de/_data/domino_on_docker.zip" target="_blank" rel="noopener">https://www.eknori.de/_data/domino_on_docker.zip</a><br>想了解Dockerfile相關內容可參考：<a href="https://www.eknori.de/2017-08-20/domino-on-docker/" target="_blank" rel="noopener">https://www.eknori.de/2017-08-20/domino-on-docker/</a></p>
+</li>
 </ul>
-<p>相關檔案在網路上都有善心人士撰寫好並提供，下載網址：<a href="https://www.eknori.de/_data/domino_on_docker.zip" target="_blank" rel="noopener">https://www.eknori.de/_data/domino_on_docker.zip</a><br>想了解Dockerfile相關內容可參考：<a href="https://www.eknori.de/2017-08-20/domino-on-docker/" target="_blank" rel="noopener">https://www.eknori.de/2017-08-20/domino-on-docker/</a><br><strong>注意：下載完成後，Dockerfile與sh script中路徑需做對應調整。</strong></p>
-<p><br></p>
-<h1 id="建置流程"><a href="#建置流程" class="headerlink" title="建置流程"></a>建置流程</h1><ol>
+</li>
+<li><p>對下載完後檔案進行相關調整</p>
+<ul>
+<li>整理檔案與更名<br>– <strong>dom</strong><br>   &nbsp;&nbsp;– DOMINO_10.0_64_BIT_LIN_XS_EN.tar<br>– <strong>dom_on_docker</strong><br>   &nbsp;&nbsp;– <strong>domino10</strong><br>   &nbsp;&nbsp;&nbsp;&nbsp;– <strong>resources</strong><br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;– <strong>initscripts</strong><br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – rc_domino<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – rc_domino_config_notes<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; – rc_domino_script<br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;– <strong>serverconfig</strong><br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;– domino10_response<br>   &nbsp;&nbsp;&nbsp;&nbsp;– Dockerfile<br>   &nbsp;&nbsp;– <strong>setup_domino</strong><br>   &nbsp;&nbsp;&nbsp;&nbsp;– <strong>resources</strong><br>   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;– docker-entrypoint<br>   &nbsp;&nbsp;&nbsp;&nbsp;– Dockerfile</li>
+<li>修改domino10/Dockerfile<br><img src="https://i.imgur.com/nINskh6.png" alt="Dockerfile"></li>
+<li>修改setup_domino/Dockerfile<br><img src="https://i.imgur.com/4JJqJ67.png" alt="Dockerfile"></li>
+</ul>
+</li>
+</ol>
+<h2 id="建置流程"><a href="#建置流程" class="headerlink" title="建置流程"></a>建置流程</h2><ol>
 <li><p>先將centos image pull 下來</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull centos</span><br></pre></td></tr></table></figure>
 </li>
@@ -463,7 +474,7 @@
 <li><p>啟動Container</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it -p 1352:1352 -p 8888:80 -p 8443:4443 --name Domino_v10_0_EN -v domino_data:/<span class="built_in">local</span>/notesdata zn/domino:Domino_v10_0_EN</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>開啟Remote Server Setup進行設定<br>打開把設定key完，設定完成後container會自動關閉</p>
+<li><p>開啟Remote Server Setup進行設定<br>設定完成後container會自動關閉</p>
 </li>
 <li><p>重新啟動container</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker start Domino_v10_0_EN</span><br></pre></td></tr></table></figure>
@@ -477,14 +488,17 @@
 </ol>
 <font size="5"><center>Domino Server已經成功運行在Docker上囉！</center></font>
 
-<p><br></p>
-<h1 id="其餘rc-domino-script相關指令"><a href="#其餘rc-domino-script相關指令" class="headerlink" title="其餘rc_domino_script相關指令"></a>其餘rc_domino_script相關指令</h1><ol>
+
+
+<h2 id="其餘rc-domino-script相關指令"><a href="#其餘rc-domino-script相關指令" class="headerlink" title="其餘rc_domino_script相關指令"></a>其餘rc_domino_script相關指令</h2><ol>
 <li><p>啟動Domino Server</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rc_domino_script start</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>停止Domino Server</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rc_domino_script stop</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rc_domino_script stop</span><br></pre></td></tr></table></figure>
+</li>
 </ol>
+<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank" rel="noopener">Docker官方網站-在linux上安裝Docker</a><br><a href="https://tc-soft.com/blog/docker-pt1" target="_blank" rel="noopener">Docker and IBM Domino系列文</a><br><a href="https://www.eknori.de/2017-08-20/domino-on-docker/" target="_blank" rel="noopener">Domino on Docker</a></p>
 
       
     </div>
@@ -507,6 +521,10 @@
             <a href="/tags/Domino-Server/" rel="tag"># Domino Server</a>
           
             <a href="/tags/Domino10/" rel="tag"># Domino10</a>
+          
+            <a href="/tags/Domino-on-Docker/" rel="tag"># Domino on Docker</a>
+          
+            <a href="/tags/Domino-on-Docker-Container/" rel="tag"># Domino on Docker Container</a>
           
         </div>
       
@@ -625,7 +643,7 @@
               <img class="site-author-image" itemprop="image" src="/images/me.jpg" alt="Andy Hung">
             
               <p class="site-author-name" itemprop="name">Andy Hung</p>
-              <p class="site-description motion-element" itemprop="description">跟著感覺走</p>
+              <p class="site-description motion-element" itemprop="description"></p>
           </div>
 
           <nav class="site-state motion-element">
@@ -657,7 +675,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
@@ -718,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">2.</span> <span class="nav-text">目的</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#註：本文只描述建置流程，並無相關原理與內容解釋。"><span class="nav-number">2.0.0.0.0.1.</span> <span class="nav-text">註：本文只描述建置流程，並無相關原理與內容解釋。</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#OS環境"><span class="nav-number">3.</span> <span class="nav-text">OS環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在Ubuntu上安裝Docker"><span class="nav-number">4.</span> <span class="nav-text">在Ubuntu上安裝Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#所需檔案"><span class="nav-number">5.</span> <span class="nav-text">所需檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建置流程"><span class="nav-number">6.</span> <span class="nav-text">建置流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其餘rc-domino-script相關指令"><span class="nav-number">7.</span> <span class="nav-text">其餘rc_domino_script相關指令</span></a></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#目的"><span class="nav-number">2.</span> <span class="nav-text">目的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#環境"><span class="nav-number">3.</span> <span class="nav-text">環境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#在Ubuntu上安裝Docker"><span class="nav-number">4.</span> <span class="nav-text">在Ubuntu上安裝Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#所需檔案"><span class="nav-number">5.</span> <span class="nav-text">所需檔案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建置流程"><span class="nav-number">6.</span> <span class="nav-text">建置流程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#其餘rc-domino-script相關指令"><span class="nav-number">7.</span> <span class="nav-text">其餘rc_domino_script相關指令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">8.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
             
 
           </div>
