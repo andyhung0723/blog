@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Java,四則運算處理,">
+  <meta name="keywords" content="Docker,Domino Server,Domino10,">
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="Java與其他大部分程式語言都是使用IEEE754演算標準，在小數計算上會有誤差，所以需要精確的做四則運算，需要更適用的類別來處理。">
-<meta name="keywords" content="Java,四則運算處理">
+<meta name="description" content="將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。">
+<meta name="keywords" content="Docker,Domino Server,Domino10">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Java] 數字計算：使用BigInteger與BigDecimal">
-<meta property="og:url" content="http://yoursite.com/2018/12/06/2018-12-05-Hexo-Next-md/index.html">
+<meta property="og:title" content="[Docker] 建立 Domino Server Container">
+<meta property="og:url" content="http://yoursite.com/2018/12/09/2018-12-09_DockerOnDomino-Setting/index.html">
 <meta property="og:site_name" content="Andy&#39;s Notes">
-<meta property="og:description" content="Java與其他大部分程式語言都是使用IEEE754演算標準，在小數計算上會有誤差，所以需要精確的做四則運算，需要更適用的類別來處理。">
+<meta property="og:description" content="將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2018-12-06T12:50:29.160Z">
+<meta property="og:updated_time" content="2018-12-09T08:56:48.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Java] 數字計算：使用BigInteger與BigDecimal">
-<meta name="twitter:description" content="Java與其他大部分程式語言都是使用IEEE754演算標準，在小數計算上會有誤差，所以需要精確的做四則運算，需要更適用的類別來處理。">
+<meta name="twitter:title" content="[Docker] 建立 Domino Server Container">
+<meta name="twitter:description" content="將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/06/2018-12-05-Hexo-Next-md/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/09/2018-12-09_DockerOnDomino-Setting/">
 
 
 
 
 
-  <title>[Java] 數字計算：使用BigInteger與BigDecimal | Andy's Notes</title>
+  <title>[Docker] 建立 Domino Server Container | Andy's Notes</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/06/2018-12-05-Hexo-Next-md/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/09/2018-12-09_DockerOnDomino-Setting/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Andy Hung">
@@ -331,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">[Java] 數字計算：使用BigInteger與BigDecimal</h1>
+          <h1 class="post-title" itemprop="name headline">[Docker] 建立 Domino Server Container</h1>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-12-06T00:00:00+08:00">
-                2018-12-06
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-12-09T00:00:00+08:00">
+                2018-12-09
               </time>
             
 
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Java/" itemprop="url" rel="index">
-                    <span itemprop="name">Java</span>
+                  <a href="/categories/Docker/" itemprop="url" rel="index">
+                    <span itemprop="name">Docker</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/2018/12/06/2018-12-05-Hexo-Next-md/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/06/2018-12-05-Hexo-Next-md/" itemprop="commentCount"></span>
+                <a href="/2018/12/09/2018-12-09_DockerOnDomino-Setting/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2018/12/09/2018-12-09_DockerOnDomino-Setting/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,34 +413,77 @@
       
 
       
-        <blockquote class="blockquote-center"><p>Java與其他大部分程式語言都是使用IEEE754演算標準，在小數計算上會有誤差，所以需要精確的做四則運算，需要更適用的類別來處理。</p>
+        <blockquote class="blockquote-center"><p>將參加IBM Domino 10體驗營時實作Docker的方式記錄下來。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="BigInteger"><a href="#BigInteger" class="headerlink" title="BigInteger"></a>BigInteger</h2><p>在Java中整數的最大值為9223372036854775807，最小值是-9223372036854775808，如果要表示超過這個範圍的數字，就要使用BigInteger類別。</p>
-<p>因為數字已經大於int及long的範圍了，所以傳入BigInteger中時會使用String<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">BigInteger n = <span class="keyword">new</span> BigInteger(<span class="string">"9223372036854775808"</span>);</span><br></pre></td></tr></table></figure></p>
-<p>四則運算則要用add、subtract、multiply、divide等(有BigInteger.ONE、BigInteger.TEN等保留字)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BigInteger n1 = <span class="keyword">new</span> BigInteger(<span class="string">"9223372036854775808"</span>);</span><br><span class="line">BigInteger n2 = <span class="keyword">new</span> BigInteger(<span class="string">"9223372036854775809"</span>);</span><br><span class="line">n.add(n2);</span><br><span class="line">n.subtract(n2);</span><br><span class="line">n.multiply(n2);</span><br><span class="line">n.divide(n2);</span><br></pre></td></tr></table></figure></p>
-<p>兩數比較則可以用equals()與compareTo()<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BigInteger n1 = <span class="keyword">new</span> BigInteger(<span class="string">"200"</span>);</span><br><span class="line">BigInteger n2 = <span class="keyword">new</span> BigInteger(<span class="string">"100"</span>);</span><br><span class="line">n1.compareTo(n2);</span><br><span class="line"><span class="comment">//相等回傳0，n1&gt;n2回傳1，n1&lt;n2回傳-1</span></span><br><span class="line">n1.equals(n2);</span><br><span class="line"><span class="comment">//等於回傳true，否則回傳false</span></span><br></pre></td></tr></table></figure></p>
-<p>BigInteger與基本型態之間的轉換<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">n1.longValue(); <span class="comment">//轉為long</span></span><br><span class="line">n1.intValue();  <span class="comment">//轉為int</span></span><br><span class="line">BigInteger.valueOf(<span class="number">100</span>); <span class="comment">//由int轉為BigInteger</span></span><br></pre></td></tr></table></figure></p>
-<p>如果由BigInteger轉回基本型態的數字超過基本型態可以容納的範圍，會使數字失去精度，此時就可以使用intValueExtract()、longValueExtract()等，使之拋出例外。<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">BigInteger n1 = <span class="keyword">new</span> BigInteger(<span class="string">"3333333333333333333333333"</span>);</span><br><span class="line">n1.intValueExact();</span><br><span class="line"><span class="comment">//會拋出 java.lang.ArithmeticException例外</span></span><br></pre></td></tr></table></figure></p>
-<p>一般於Math類別常用的方法BigInteger也皆有支援(sqrt除外)<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">BigInteger n1 = <span class="keyword">new</span> BigInteger(<span class="string">"200"</span>);</span><br><span class="line">BigInteger n2 = <span class="keyword">new</span> BigInteger(<span class="string">"100"</span>);</span><br><span class="line">n1.pow(<span class="number">2</span>);</span><br><span class="line">n1.abs();</span><br><span class="line">n1.min(n2);</span><br><span class="line">n1.max(n2);</span><br></pre></td></tr></table></figure></p>
-<h2 id="BigDecimal"><a href="#BigDecimal" class="headerlink" title="BigDecimal"></a>BigDecimal</h2><p>與BigInteger方法大同小異，可以防止小數計算時因IEEE754規範所造成的誤差。<br>比較特別的是四捨五入、無條件捨去、無條件進入的處理<br>先提一下Math類別的處理：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Math.round(<span class="number">5.4</span>);    <span class="comment">//四捨五入</span></span><br><span class="line">Math.ceil(<span class="number">5.4</span>);     <span class="comment">//無條件進位</span></span><br><span class="line">Math.floor(<span class="number">5.4</span>);    <span class="comment">//無條件捨去</span></span><br></pre></td></tr></table></figure></p>
-<p><strong>要注意，無條件進位是往數字大的方向進位，無條件捨去是往數字小的方向捨去</strong><br>而此種進位方式如果牽扯到小數，有可能會因為IEEE754標準而發生誤差。<br>舉例：-5.5用Math.round()四捨五入的結果會是-5<br>此時就可以使用BigDecimal的進位方式：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">BigDecimal r = <span class="keyword">new</span> BigDecimal(-<span class="number">3.3456789</span>); </span><br><span class="line">BigDecimal i1 = r.setScale(<span class="number">3</span>,RoundingMode.UP);</span><br><span class="line">BigDecimal i2 = r.setScale(<span class="number">3</span>,RoundingMode.DOWN);</span><br><span class="line">BigDecimal i3 = r.setScale(<span class="number">3</span>,RoundingMode.CEILING);</span><br><span class="line">BigDecimal i4 = r.setScale(<span class="number">3</span>,RoundingMode.FLOOR);</span><br><span class="line">BigDecimal i5 = r.setScale(<span class="number">3</span>,RoundingMode.HALF_UP);</span><br><span class="line">BigDecimal i6 = r.setScale(<span class="number">3</span>,RoundingMode.HALF_DOWN);</span><br><span class="line">BigDecimal i7 = r.setScale(<span class="number">3</span>,RoundingMode.HALF_EVEN);</span><br></pre></td></tr></table></figure></p>
-<ol>
-<li>UP：往該數<strong>絕對值</strong>大的方向進位</li>
-<li>DOWN：往該數<strong>絕對值</strong>小的方向捨去</li>
-<li>CEILING：與Math.ceil的進位方式相同</li>
-<li>FLOOR：與Math.floor的進位方式相同</li>
-<li>HALF_UP：四捨五入(不會有誤差)</li>
-<li>HALF_DOWN：五捨去，六以上進位</li>
-<li>HALF_EVEN：銀行家捨入法</li>
-</ol>
-<p>而BigDecimal可以用setScale來設定量級<br><code>r.setScale(3,RoundingMode.HALF_UP)</code>：這就代表四捨五入到小數點後第三位</p>
-<h3 id="比較一下其餘可能影響進位的類別"><a href="#比較一下其餘可能影響進位的類別" class="headerlink" title="比較一下其餘可能影響進位的類別"></a>比較一下其餘可能影響進位的類別</h3><ol>
-<li><p>DecimalFormat(還是會有IEEE754所造成的精準度問題)：比較常用在格式化數字</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">DecimalFormat df = <span class="keyword">new</span> DecimalFormat(<span class="string">"#.00"</span>);</span><br><span class="line">System.out.println(df.format(-<span class="number">3.155</span>));</span><br></pre></td></tr></table></figure>
+<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>暌違五年，在今年10月IBM終於正式發布Doimno第10版。新版著重於三大特色：支援Node.js開發、可將Domino Server建立在Docker上以及在iPad上運行Domino等。而本文的內容是如何在Docker上建立Domino Server及運行。<br><br></p>
+<h1 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h1><p>製作一個Docker Container，包含CentOS與Domino V10 Server。</p>
+<h6 id="註：本文只描述建置流程，並無相關原理與內容解釋。"><a href="#註：本文只描述建置流程，並無相關原理與內容解釋。" class="headerlink" title="註：本文只描述建置流程，並無相關原理與內容解釋。"></a>註：本文只描述建置流程，並無相關原理與內容解釋。</h6><p><br></p>
+<h1 id="OS環境"><a href="#OS環境" class="headerlink" title="OS環境"></a>OS環境</h1><ul>
+<li>Ubuntu 18.04.1 LTS</li>
+</ul>
+<p><br></p>
+<h1 id="在Ubuntu上安裝Docker"><a href="#在Ubuntu上安裝Docker" class="headerlink" title="在Ubuntu上安裝Docker"></a>在Ubuntu上安裝Docker</h1><ol>
+<li>參考Docker官方網站文件中安裝流程：<a href="https://docs.docker.com/install/linux/docker-ce/ubuntu/" target="_blank" rel="noopener">https://docs.docker.com/install/linux/docker-ce/ubuntu/</a></li>
+<li><p>安裝後建議調整：</p>
+<ul>
+<li><p>開機時自動啟動Docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ systemctl start docker</span><br><span class="line">$ systemctl <span class="built_in">enable</span> docker</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>String.format：會無條件捨去</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span> d = -<span class="number">3.146</span>;</span><br><span class="line">String result = String.format(<span class="string">"%.2f"</span>,d);</span><br><span class="line">System.out.println(result);</span><br></pre></td></tr></table></figure></li>
+<li><p>允許非root帳戶使用Docker</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ sudo usermod -aG docker <span class="variable">$&#123;USER&#125;</span></span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ol>
+<p><br></p>
+<h1 id="所需檔案"><a href="#所需檔案" class="headerlink" title="所需檔案"></a>所需檔案</h1><p><strong>需要先準備兩個資料夾，dom 與 dom_on_docker</strong></p>
+<ul>
+<li>dom：包含Domino Server壓縮檔(tar)</li>
+<li>dom_on_docker：包含domino10與setupdomino兩個目錄，內容為產生image用的Dockerfile、相關Script與ServerConfig</li>
+</ul>
+<p>相關檔案在網路上都有善心人士撰寫好並提供，下載網址：<a href="https://www.eknori.de/_data/domino_on_docker.zip" target="_blank" rel="noopener">https://www.eknori.de/_data/domino_on_docker.zip</a><br>想了解Dockerfile相關內容可參考：<a href="https://www.eknori.de/2017-08-20/domino-on-docker/" target="_blank" rel="noopener">https://www.eknori.de/2017-08-20/domino-on-docker/</a><br><strong>注意：下載完成後，Dockerfile與sh script中路徑需做對應調整。</strong></p>
+<p><br></p>
+<h1 id="建置流程"><a href="#建置流程" class="headerlink" title="建置流程"></a>建置流程</h1><ol>
+<li><p>先將centos image pull 下來</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull centos</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>將dom與dom_on_docker放置到指定路徑下(本文為根目錄下docker目錄)，並將目前位置切換至該目錄</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> docker</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>製作images檔，將Domino安裝到CentOS上</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t zn/domino:v10_0_EN -f dom_on_docker/domino10/Dockerfile .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>製作另一images檔，啟用必要端口Remote Server Setup連線資訊</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t zn/domino:Domino_v10_0_EN -f dom_on_docker/setup_domino/Dockerfile .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>創建一個volume來儲存/local/notesdata</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker volume create --name=domino_data</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>啟動Container</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it -p 1352:1352 -p 8888:80 -p 8443:4443 --name Domino_v10_0_EN -v domino_data:/<span class="built_in">local</span>/notesdata zn/domino:Domino_v10_0_EN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>開啟Remote Server Setup進行設定<br>打開把設定key完，設定完成後container會自動關閉</p>
+</li>
+<li><p>重新啟動container</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker start Domino_v10_0_EN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>進入container中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker attach Domino_v10_0_EN</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>觀看Domino Server Console</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rc_domino_script monitor      <span class="comment">#此為自定義的script</span></span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<font size="5"><center>Domino Server已經成功運行在Docker上囉！</center></font>
+
+<p><br></p>
+<h1 id="其餘rc-domino-script相關指令"><a href="#其餘rc-domino-script相關指令" class="headerlink" title="其餘rc_domino_script相關指令"></a>其餘rc_domino_script相關指令</h1><ol>
+<li><p>啟動Domino Server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rc_domino_script start</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>停止Domino Server</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rc_domino_script stop</span><br></pre></td></tr></table></figure></li>
 </ol>
 
       
@@ -459,9 +502,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Java/" rel="tag"># Java</a>
+            <a href="/tags/Docker/" rel="tag"># Docker</a>
           
-            <a href="/tags/四則運算處理/" rel="tag"># 四則運算處理</a>
+            <a href="/tags/Domino-Server/" rel="tag"># Domino Server</a>
+          
+            <a href="/tags/Domino10/" rel="tag"># Domino10</a>
           
         </div>
       
@@ -492,8 +537,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/04/2018-12-04_Hexo_Created/" rel="next" title="[Hexo] Hexo 基本環境建置">
-                <i class="fa fa-chevron-left"></i> [Hexo] Hexo 基本環境建置
+              <a href="/2018/12/06/2018-12-05-Hexo-Next-md/" rel="next" title="[Java] 數字計算：使用BigInteger與BigDecimal">
+                <i class="fa fa-chevron-left"></i> [Java] 數字計算：使用BigInteger與BigDecimal
               </a>
             
           </div>
@@ -501,10 +546,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/12/09/2018-12-09_DockerOnDomino-Setting/" rel="prev" title="[Docker] 建立 Domino Server Container">
-                [Docker] 建立 Domino Server Container <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -677,7 +718,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#BigInteger"><span class="nav-number">1.</span> <span class="nav-text">BigInteger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#BigDecimal"><span class="nav-number">2.</span> <span class="nav-text">BigDecimal</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#比較一下其餘可能影響進位的類別"><span class="nav-number">2.1.</span> <span class="nav-text">比較一下其餘可能影響進位的類別</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#目的"><span class="nav-number">2.</span> <span class="nav-text">目的</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#註：本文只描述建置流程，並無相關原理與內容解釋。"><span class="nav-number">2.0.0.0.0.1.</span> <span class="nav-text">註：本文只描述建置流程，並無相關原理與內容解釋。</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#OS環境"><span class="nav-number">3.</span> <span class="nav-text">OS環境</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#在Ubuntu上安裝Docker"><span class="nav-number">4.</span> <span class="nav-text">在Ubuntu上安裝Docker</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#所需檔案"><span class="nav-number">5.</span> <span class="nav-text">所需檔案</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#建置流程"><span class="nav-number">6.</span> <span class="nav-text">建置流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#其餘rc-domino-script相關指令"><span class="nav-number">7.</span> <span class="nav-text">其餘rc_domino_script相關指令</span></a></li></div>
             
 
           </div>
@@ -849,9 +890,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'http://yoursite.com/2018/12/06/2018-12-05-Hexo-Next-md/';
-          this.page.identifier = '2018/12/06/2018-12-05-Hexo-Next-md/';
-          this.page.title = '[Java] 數字計算：使用BigInteger與BigDecimal';
+          this.page.url = 'http://yoursite.com/2018/12/09/2018-12-09_DockerOnDomino-Setting/';
+          this.page.identifier = '2018/12/09/2018-12-09_DockerOnDomino-Setting/';
+          this.page.title = '[Docker] 建立 Domino Server Container';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://andyhung0723.disqus.com/embed.js';
