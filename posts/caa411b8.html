@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="BackEnd Beginner, Domino, Java">
+  <meta name="keywords" content="SSH,SCP,不用密碼,SCP 不用密碼傳輸檔案,AIX">
 
 
 
@@ -80,17 +80,18 @@
 
 
 
-<meta name="description" content="跟著感覺走">
-<meta name="keywords" content="BackEnd Beginner, Domino, Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小安迪的玩具間">
-<meta property="og:url" content="https://andyhung0723.github.io/tags/Docker/index.html">
+<meta name="description" content="在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。">
+<meta name="keywords" content="SSH,SCP,不用密碼,SCP 不用密碼傳輸檔案,AIX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[AIX] SCP 不用密碼傳輸檔案">
+<meta property="og:url" content="https://andyhung0723.github.io/posts/caa411b8.html">
 <meta property="og:site_name" content="小安迪的玩具間">
-<meta property="og:description" content="跟著感覺走">
+<meta property="og:description" content="在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:updated_time" content="2019-03-06T14:40:59.663Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小安迪的玩具間">
-<meta name="twitter:description" content="跟著感覺走">
+<meta name="twitter:title" content="[AIX] SCP 不用密碼傳輸檔案">
+<meta name="twitter:description" content="在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。">
 
 
 
@@ -120,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://andyhung0723.github.io/tags/Docker/">
+  <link rel="canonical" href="https://andyhung0723.github.io/posts/caa411b8.html">
 
 
 
 
 
-  <title>標籤: Docker | 小安迪的玩具間</title>
+  <title>[AIX] SCP 不用密碼傳輸檔案 | 小安迪的玩具間</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -163,7 +164,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,59 +300,247 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Docker<small>標籤</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://andyhung0723.github.io/posts/caa411b8.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andy Hung">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小安迪的玩具間">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/DominoOnDocker.html" itemprop="url">
-              
-                <span itemprop="name">[Docker] 建立 Domino Server Container</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">[AIX] SCP 不用密碼傳輸檔案</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-09T00:00:00+08:00" content="2018-12-09">
-          12-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">
+                2019-03-06
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/SSH/" itemprop="url" rel="index">
+                    <span itemprop="name">SSH</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/caa411b8.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/caa411b8.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote class="blockquote-center"><p>在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。</p>
+</blockquote>
+<a id="more"></a>
+<h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><p>在來源端產生SSH Key，並將公鑰加到目的端的authorized_keys檔案中。</p>
+<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><ol>
+<li><p>在來源端先切換至.ssh目錄下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>產生 id_rsa、id_rsa.pub兩key，所有詢問皆按enter即可。 </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>將id_rsa.pub複製到目的端，會詢問目的端密碼。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp ~/.ssh/id_rsa.pub xxx@xxx.xxx.xxx.xxx:/xxx/.ssh/</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<blockquote>
+<p>註：若為第一次對該目的端server使用ssh連線，則會出現<font color="red">Are you sure you want to continue connecting(yes/no)?</font> 此處輸入yes後就會開始連線，並同時將目的地server的public key加入~/.ssh/known_hosts檔案中。下次再對此台server進行ssh連線時就不會再詢問此問題。</p>
+</blockquote>
+<ol start="4">
+<li><p>轉至目的端，切換至.ssh目錄下</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>將id_rsa.pub內容加到authorized_keys中</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>再去傳輸檔案就不會要求輸入密碼了。</p>
 
       
     </div>
+    
+    
+    
 
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/SSH/" rel="tag"># SSH</a>
+          
+            <a href="/tags/AIX/" rel="tag"># AIX</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/DominoOnDocker.html" rel="next" title="[Docker] 建立 Domino Server Container">
+                <i class="fa fa-chevron-left"></i> [Docker] 建立 Domino Server Container
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
+
+
+    <div class="post-spread">
+      
+    </div>
   
-
+  </div>
+  
 
           </div>
           
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -372,8 +561,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -463,6 +661,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式"><span class="nav-number">1.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟"><span class="nav-number">2.</span> <span class="nav-text">步驟</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -605,6 +819,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -622,6 +840,18 @@
       <script id="dsq-count-scr" src="https://andyhung0723.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://andyhung0723.github.io/posts/caa411b8.html';
+          this.page.identifier = 'posts/caa411b8.html';
+          this.page.title = '[AIX] SCP 不用密碼傳輸檔案';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://andyhung0723.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
