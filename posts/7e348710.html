@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="Hexo,GitHub,">
+  <meta name="keywords" content="JavaScript 作用域,JS 作用域">
 
 
 
@@ -80,19 +80,23 @@
 
 
 
-<meta name="keywords" content="Hexo,GitHub">
+<meta name="description" content="重新認識 JavaScript 的作用域">
+<meta name="keywords" content="JavaScript 作用域,JS 作用域">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[Hexo] Hexo 基本環境建置">
-<meta property="og:url" content="https://andyhung0723.github.io/posts/HexoSetting.html">
+<meta property="og:title" content="[JavaScript] 深入JS - 作用域">
+<meta property="og:url" content="https://andyhung0723.github.io/posts/7e348710.html">
 <meta property="og:site_name" content="小安迪的玩具間">
+<meta property="og:description" content="重新認識 JavaScript 的作用域">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:image" content="https://i.imgur.com/dDZwTn5.png">
-<meta property="og:image" content="https://i.imgur.com/OrJcPhR.png">
-<meta property="og:image" content="https://i.imgur.com/QyFupx2.png">
-<meta property="og:updated_time" content="2018-12-09T12:43:47.606Z">
+<meta property="og:image" content="https://i.imgur.com/w05MV4Z.png">
+<meta property="og:image" content="https://i.imgur.com/7wpXtHm.png">
+<meta property="og:image" content="https://i.imgur.com/7wpXtHm.png">
+<meta property="og:image" content="https://i.imgur.com/7wpXtHm.png">
+<meta property="og:updated_time" content="2019-08-20T16:09:10.540Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[Hexo] Hexo 基本環境建置">
-<meta name="twitter:image" content="https://i.imgur.com/dDZwTn5.png">
+<meta name="twitter:title" content="[JavaScript] 深入JS - 作用域">
+<meta name="twitter:description" content="重新認識 JavaScript 的作用域">
+<meta name="twitter:image" content="https://i.imgur.com/w05MV4Z.png">
 
 
 
@@ -122,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://andyhung0723.github.io/posts/HexoSetting.html">
+  <link rel="canonical" href="https://andyhung0723.github.io/posts/7e348710.html">
 
 
 
 
 
-  <title>[Hexo] Hexo 基本環境建置 | 小安迪的玩具間</title>
+  <title>[JavaScript] 深入JS - 作用域 | 小安迪的玩具間</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -315,7 +319,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://andyhung0723.github.io/posts/HexoSetting.html">
+    <link itemprop="mainEntityOfPage" href="https://andyhung0723.github.io/posts/7e348710.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Andy Hung">
@@ -332,7 +336,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">[Hexo] Hexo 基本環境建置</h2>
+          <h2 class="post-title" itemprop="name headline">[JavaScript] 深入JS - 作用域</h2>
         
 
         <div class="post-meta">
@@ -344,8 +348,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2018-12-04T00:00:00+08:00">
-                2018-12-04
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-08-20T00:00:00+08:00">
+                2019-08-20
               </time>
             
 
@@ -367,8 +371,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Hexo/" itemprop="url" rel="index">
-                    <span itemprop="name">Hexo</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -385,8 +389,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/HexoSetting.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/HexoSetting.html" itemprop="commentCount"></span>
+                <a href="/posts/7e348710.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/7e348710.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -414,61 +418,76 @@
       
 
       
-        <p><img src="https://i.imgur.com/dDZwTn5.png" alt=""><br><a id="more"></a></p>
-<h2 id="Hexo優點"><a href="#Hexo優點" class="headerlink" title="Hexo優點"></a>Hexo優點</h2><ol>
-<li>文章編輯使用MarkDown語法，好用且易學</li>
-<li>可搭配GitHub Pages部屬，無須成本</li>
-<li>中文支援度高</li>
-<li>建立流程簡單，可快速搭建</li>
-<li>有眾多優質的主題與外掛可搭配使用</li>
-</ol>
-<hr>
-<h2 id="環境"><a href="#環境" class="headerlink" title="環境"></a>環境</h2><h3 id="安裝Git"><a href="#安裝Git" class="headerlink" title="安裝Git"></a>安裝Git</h3><p>至<a href="https://git-scm.com/downloads" target="_blank" rel="noopener">官方網站</a>下載並安裝</p>
-<h3 id="安裝Node-js"><a href="#安裝Node-js" class="headerlink" title="安裝Node.js"></a>安裝Node.js</h3><p>至<a href="https://nodejs.org/en/" target="_blank" rel="noopener">官方網站</a>下載並安裝</p>
-<hr>
-<h2 id="初始化Hexo"><a href="#初始化Hexo" class="headerlink" title="初始化Hexo"></a>初始化Hexo</h2><p>使用bash或命令提示字元依照以下流程進行建置</p>
-<h3 id="安裝CLI"><a href="#安裝CLI" class="headerlink" title="安裝CLI"></a>安裝CLI</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
-<h3 id="初始化"><a href="#初始化" class="headerlink" title="初始化"></a>初始化</h3><p>先建立好愈擺放部落格檔案的資料夾，並切換到該目錄下方(往後的操作都是在此目錄下進行)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;           <span class="comment">#切換至目標目錄下</span></span><br><span class="line">$ hexo init &lt;folder&gt;    <span class="comment">#在該目錄下初始化Hexo相關套件</span></span><br></pre></td></tr></table></figure></p>
-<p>初始化完成後會建構一套預設版型與一篇範例文章</p>
-<h3 id="本地端運行"><a href="#本地端運行" class="headerlink" title="本地端運行"></a>本地端運行</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server           <span class="comment">#或使用簡寫 hexo s</span></span><br></pre></td></tr></table></figure>
-<p>執行完成後造訪 <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> 就會看到Hexo預設幫你建立好的網頁</p>
-<hr>
-<h2 id="建立GitHub-Pages"><a href="#建立GitHub-Pages" class="headerlink" title="建立GitHub Pages"></a>建立GitHub Pages</h2><h3 id="Github提供兩種靜態網站"><a href="#Github提供兩種靜態網站" class="headerlink" title="Github提供兩種靜態網站"></a>Github提供兩種靜態網站</h3><h4 id="1-儲存庫的名稱為-用戶名稱-github-io"><a href="#1-儲存庫的名稱為-用戶名稱-github-io" class="headerlink" title="1. 儲存庫的名稱為{用戶名稱}.github.io"></a>1. 儲存庫的名稱為{用戶名稱}.github.io</h4><p>此類型每個帳號只能有一個，路徑為 <code>https://{用戶名稱}.github.io</code></p>
-<h4 id="2-任何專案下的gh-pages"><a href="#2-任何專案下的gh-pages" class="headerlink" title="2. 任何專案下的gh-pages"></a>2. 任何專案下的gh-pages</h4><p>此類型沒有數量限制，路徑為 <code>https://{用戶名稱}.github.io/{專案名稱}</code></p>
-<p><br></p>
-<h3 id="建立儲存庫"><a href="#建立儲存庫" class="headerlink" title="建立儲存庫"></a>建立儲存庫</h3><p>這邊使用第一種，新增一個以用戶名稱命名的儲存庫<br><img src="https://i.imgur.com/OrJcPhR.png" alt=""></p>
-<h3 id="將專案推到GitHub上"><a href="#將專案推到GitHub上" class="headerlink" title="將專案推到GitHub上"></a>將專案推到GitHub上</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ git init</span><br><span class="line">$ git add .</span><br><span class="line">$ git commit -m <span class="string">"init"</span></span><br><span class="line">$ git remote add origin https://github.com/&#123;用戶名稱&#125;/&#123;用戶名稱&#125;.github.io.git</span><br><span class="line">$ git push -u origin master</span><br></pre></td></tr></table></figure>
-<hr>
-<h2 id="部屬到GitHub-Pages"><a href="#部屬到GitHub-Pages" class="headerlink" title="部屬到GitHub Pages"></a>部屬到GitHub Pages</h2><h3 id="安裝自動部屬工具"><a href="#安裝自動部屬工具" class="headerlink" title="安裝自動部屬工具"></a>安裝自動部屬工具</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<h3 id="設定-config-yml"><a href="#設定-config-yml" class="headerlink" title="設定_config.yml"></a>設定_config.yml</h3><p>於部落格目錄下找到_config.yml，搜尋檔案內的deploy區段並做以下設定<br><img src="https://i.imgur.com/QyFupx2.png" alt=""></p>
-<h3 id="編譯出靜態網頁"><a href="#編譯出靜態網頁" class="headerlink" title="編譯出靜態網頁"></a>編譯出靜態網頁</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g</span><br></pre></td></tr></table></figure>
-<h3 id="部屬到GitHub"><a href="#部屬到GitHub" class="headerlink" title="部屬到GitHub"></a>部屬到GitHub</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d</span><br></pre></td></tr></table></figure>
-<p>這樣就完成基本建置&amp;部屬囉！<br>造訪 https://{用戶名稱}.github.io 可以觀看部屬上去的網站(有時須等待GitHub完成部屬，可能須等待3~5分鐘不等)</p>
-<hr>
-<h2 id="建立與刪除文章"><a href="#建立與刪除文章" class="headerlink" title="建立與刪除文章"></a>建立與刪除文章</h2><h3 id="建立文章"><a href="#建立文章" class="headerlink" title="建立文章"></a>建立文章</h3><ol>
-<li><p>執行以下指令建立新空白文章</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new [postName]   <span class="comment">#postName為文章編輯，盡量以雙引號包裹避免錯誤</span></span><br></pre></td></tr></table></figure>
-<p> 建立的文章會位於<code>部落格目錄/source/_posts/</code>目錄下</p>
+        <blockquote class="blockquote-center"><p>重新認識 JavaScript 的作用域</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="何謂作用域"><a href="#何謂作用域" class="headerlink" title="何謂作用域 ?"></a>何謂作用域 ?</h1><p>有「作用」的區「域」，顧名思義在宣告一個變數時，它們在程式中哪些地方有辦法被存取到，這些地方就稱為這個變數的作用域。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/w05MV4Z.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，紅框部分就稱為 hi 變數的作用域</td>
+</tr>
+</tbody>
+</table>
+<h1 id="靜態作用域與動態作用域"><a href="#靜態作用域與動態作用域" class="headerlink" title="靜態作用域與動態作用域"></a>靜態作用域與動態作用域</h1><ul>
+<li><h2 id="靜態-動態"><a href="#靜態-動態" class="headerlink" title="靜態?  動態?"></a>靜態?  動態?</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在大部分的程式語言中，<strong>靜態</strong>與<strong>動態</strong>是一個形容詞，可以套用在很多名詞上，例如：靜態變數、動態變數、靜態函式、動態函式，就連程式語言也有分靜態語言與動態語言。雖然這兩個形容詞好像一天到晚出現在各種地方，但其主要代表的概念是差不多的。<strong>靜態</strong>是指程式在開始執行前某些特性就已經決定了，不會也不可以在程式執行中對這個特性進行改變；反之，<strong>動態</strong>就是程式在執行中的時候，才會決定某些特性。這樣看起來可能會有點抽象，下面談到作用域時會清楚一點。</li>
+<li><h2 id="靜態作用域與動態作用域-1"><a href="#靜態作用域與動態作用域-1" class="headerlink" title="靜態作用域與動態作用域"></a>靜態作用域與動態作用域</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>靜態作用域</strong>，又稱為<strong>語法作用域(Lexical Scope)</strong>，其特性是語法解析時就已經確定作用域。意思就是程式執行前就已經確定了它能夠被存取的地方，且不會再改變。如果在該作用域中找不到某個變數時，就會自動往上一層查找。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;與之相對的是<strong>動態作用域</strong>，其特性是進行函式調用的時才決定它的作用域。意思就是要等到程式執行到函數被呼叫時，才會決定函數中變數的作用域。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">2</span>;</span><br><span class="line">    fn1();</span><br><span class="line">&#125;</span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>使用MarkDown完成編寫後，可先在本地端運行觀看成果</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo s</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新產生靜態頁面並部屬</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g         <span class="comment">#這是上方教的 $ hexo g 與 $ hexo d 的結合版</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="刪除文章"><a href="#刪除文章" class="headerlink" title="刪除文章"></a>刪除文章</h3><ol>
-<li>於<code>部落格目錄/source/_posts/</code>找到愈刪除的文章檔案，執行刪除</li>
-<li><p>清除已產生的靜態頁面</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>重新產生靜態頁面並部屬</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo d -g         <span class="comment">#這是上方教的 $ hexo g 與 $ hexo d 的結合版</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<hr>
-<h2 id="參考資料"><a href="#參考資料" class="headerlink" title="參考資料"></a>參考資料</h2><p><a href="https://hexo.io/zh-tw/index.html" target="_blank" rel="noopener">Hexo官方網站</a><br><a href="https://yaoandy107.github.io/hexo-tutorial/" target="_blank" rel="noopener">Hexo+GitHub，新手也可以快速建立部落格</a><br><a href="https://kanboo.github.io/2017/10/14/Hexo-Create/" target="_blank" rel="noopener">Hexo-環境建置</a></p>
-
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上這段程式，如果在靜態作用域的語言中執行，將會在 fn1 中先查找有無 value 變數，若找不到就會往上一層的全域進行查找，因此最終會輸出「1」。但若是在動態作用域的語言中執行，將會在呼叫 fn1 的 fn2 中查找 value，因此會輸出「2」。</p>
+<h1 id="靜態作用域種類"><a href="#靜態作用域種類" class="headerlink" title="靜態作用域種類"></a>靜態作用域種類</h1><p>根據劃分「域」的界線，可分為以下幾種：</p>
+<ul>
+<li><h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2>簡稱「全域」，變數的作用域範圍為整個程式碼。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/7wpXtHm.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，name 變數的作用域為整個程式碼，因此稱 name 為<strong>全域變數</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h2 id="函數作用域"><a href="#函數作用域" class="headerlink" title="函數作用域"></a>函數作用域</h2>變數在函數內部宣告，且作用域只在函數內部。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/7wpXtHm.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，hi 變數的作用域為 sayHi 這個函式包起來的區域，因此 hi 又可稱為<strong>區域變數</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h2 id="區塊作用域"><a href="#區塊作用域" class="headerlink" title="區塊作用域"></a>區塊作用域</h2>變數在區塊包起來的區域宣告， 且作用域範圍為區塊包起來的區域。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/7wpXtHm.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，變數 i 宣告在 for 區塊內，所以只在 for 區塊內能夠存取</td>
+</tr>
+</tbody>
+</table>
+<p>講了這麼多，最後只要知道以下結論就好：</p>
+<div style="text-align: center"><br><p style="font-size: 20px;">JavaScript 是採用<strong>語法作用域</strong>，ES6 以前只有<strong>全局作用域</strong>與<strong>函式作用域</strong>，ES6 以後 let 與 const 為<strong>區塊作用域</strong>。</p><br></div>
       
     </div>
     
@@ -485,9 +504,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Hexo/" rel="tag"># Hexo</a>
-          
-            <a href="/tags/GitHub/" rel="tag"># GitHub</a>
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
           
         </div>
       
@@ -518,15 +535,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/posts/caa411b8.html" rel="next" title="[AIX] SCP 不用密碼傳輸檔案">
+                <i class="fa fa-chevron-left"></i> [AIX] SCP 不用密碼傳輸檔案
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/Java_BigInteger_BigDecimal.html" rel="prev" title="[Java] 數字計算：使用BigInteger與BigDecimal">
-                [Java] 數字計算：使用BigInteger與BigDecimal <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -687,7 +704,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Hexo優點"><span class="nav-number">1.</span> <span class="nav-text">Hexo優點</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#環境"><span class="nav-number">2.</span> <span class="nav-text">環境</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝Git"><span class="nav-number">2.1.</span> <span class="nav-text">安裝Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝Node-js"><span class="nav-number">2.2.</span> <span class="nav-text">安裝Node.js</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#初始化Hexo"><span class="nav-number">3.</span> <span class="nav-text">初始化Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝CLI"><span class="nav-number">3.1.</span> <span class="nav-text">安裝CLI</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#初始化"><span class="nav-number">3.2.</span> <span class="nav-text">初始化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#本地端運行"><span class="nav-number">3.3.</span> <span class="nav-text">本地端運行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立GitHub-Pages"><span class="nav-number">4.</span> <span class="nav-text">建立GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Github提供兩種靜態網站"><span class="nav-number">4.1.</span> <span class="nav-text">Github提供兩種靜態網站</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-儲存庫的名稱為-用戶名稱-github-io"><span class="nav-number">4.1.1.</span> <span class="nav-text">1. 儲存庫的名稱為{用戶名稱}.github.io</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-任何專案下的gh-pages"><span class="nav-number">4.1.2.</span> <span class="nav-text">2. 任何專案下的gh-pages</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#建立儲存庫"><span class="nav-number">4.2.</span> <span class="nav-text">建立儲存庫</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#將專案推到GitHub上"><span class="nav-number">4.3.</span> <span class="nav-text">將專案推到GitHub上</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#部屬到GitHub-Pages"><span class="nav-number">5.</span> <span class="nav-text">部屬到GitHub Pages</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安裝自動部屬工具"><span class="nav-number">5.1.</span> <span class="nav-text">安裝自動部屬工具</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#設定-config-yml"><span class="nav-number">5.2.</span> <span class="nav-text">設定_config.yml</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#編譯出靜態網頁"><span class="nav-number">5.3.</span> <span class="nav-text">編譯出靜態網頁</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部屬到GitHub"><span class="nav-number">5.4.</span> <span class="nav-text">部屬到GitHub</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#建立與刪除文章"><span class="nav-number">6.</span> <span class="nav-text">建立與刪除文章</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#建立文章"><span class="nav-number">6.1.</span> <span class="nav-text">建立文章</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#刪除文章"><span class="nav-number">6.2.</span> <span class="nav-text">刪除文章</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#參考資料"><span class="nav-number">7.</span> <span class="nav-text">參考資料</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#何謂作用域"><span class="nav-number">1.</span> <span class="nav-text">何謂作用域 ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#靜態作用域與動態作用域"><span class="nav-number">2.</span> <span class="nav-text">靜態作用域與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#靜態-動態"><span class="nav-number">2.1.</span> <span class="nav-text">靜態?  動態?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#靜態作用域與動態作用域-1"><span class="nav-number">2.2.</span> <span class="nav-text">靜態作用域與動態作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#靜態作用域種類"><span class="nav-number">3.</span> <span class="nav-text">靜態作用域種類</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局作用域"><span class="nav-number">3.1.</span> <span class="nav-text">全局作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函數作用域"><span class="nav-number">3.2.</span> <span class="nav-text">函數作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#區塊作用域"><span class="nav-number">3.3.</span> <span class="nav-text">區塊作用域</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -859,9 +876,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://andyhung0723.github.io/posts/HexoSetting.html';
-          this.page.identifier = 'posts/HexoSetting.html';
-          this.page.title = '[Hexo] Hexo 基本環境建置';
+          this.page.url = 'https://andyhung0723.github.io/posts/7e348710.html';
+          this.page.identifier = 'posts/7e348710.html';
+          this.page.title = '[JavaScript] 深入JS - 作用域';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://andyhung0723.disqus.com/embed.js';

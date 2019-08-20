@@ -1,6 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[JavaScript] 深入JS - 作用域]]></title>
+    <url>%2Fposts%2F7e348710.html</url>
+    <content type="text"><![CDATA[重新認識 JavaScript 的作用域 何謂作用域 ?有「作用」的區「域」，顧名思義在宣告一個變數時，它們在程式中哪些地方有辦法被存取到，這些地方就稱為這個變數的作用域。 如圖，在 JavaScript 中，紅框部分就稱為 hi 變數的作用域 靜態作用域與動態作用域 靜態? 動態?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在大部分的程式語言中，靜態與動態是一個形容詞，可以套用在很多名詞上，例如：靜態變數、動態變數、靜態函式、動態函式，就連程式語言也有分靜態語言與動態語言。雖然這兩個形容詞好像一天到晚出現在各種地方，但其主要代表的概念是差不多的。靜態是指程式在開始執行前某些特性就已經決定了，不會也不可以在程式執行中對這個特性進行改變；反之，動態就是程式在執行中的時候，才會決定某些特性。這樣看起來可能會有點抽象，下面談到作用域時會清楚一點。 靜態作用域與動態作用域&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;靜態作用域，又稱為語法作用域(Lexical Scope)，其特性是語法解析時就已經確定作用域。意思就是程式執行前就已經確定了它能夠被存取的地方，且不會再改變。如果在該作用域中找不到某個變數時，就會自動往上一層查找。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;與之相對的是動態作用域，其特性是進行函式調用的時才決定它的作用域。意思就是要等到程式執行到函數被呼叫時，才會決定函數中變數的作用域。123456789var value = 1;function fn1() &#123; console.log(value);&#125;function fn2() &#123; var value = 2; fn1();&#125;fn2(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上這段程式，如果在靜態作用域的語言中執行，將會在 fn1 中先查找有無 value 變數，若找不到就會往上一層的全域進行查找，因此最終會輸出「1」。但若是在動態作用域的語言中執行，將會在呼叫 fn1 的 fn2 中查找 value，因此會輸出「2」。 靜態作用域種類根據劃分「域」的界線，可分為以下幾種： 全局作用域簡稱「全域」，變數的作用域範圍為整個程式碼。 如圖，在 JavaScript 中，name 變數的作用域為整個程式碼，因此稱 name 為全域變數 函數作用域變數在函數內部宣告，且作用域只在函數內部。 如圖，在 JavaScript 中，hi 變數的作用域為 sayHi 這個函式包起來的區域，因此 hi 又可稱為區域變數 區塊作用域變數在區塊包起來的區域宣告， 且作用域範圍為區塊包起來的區域。 如圖，在 JavaScript 中，變數 i 宣告在 for 區塊內，所以只在 for 區塊內能夠存取 講了這麼多，最後只要知道以下結論就好： JavaScript 是採用語法作用域，ES6 以前只有全局作用域與函式作用域，ES6 以後 let 與 const 為區塊作用域。]]></content>
+      <categories>
+        <category>JavaScript</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[AIX] SCP 不用密碼傳輸檔案]]></title>
     <url>%2Fposts%2Fcaa411b8.html</url>
     <content type="text"><![CDATA[在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。 方式在來源端產生SSH Key，並將公鑰加到目的端的authorized_keys檔案中。 步驟 在來源端先切換至.ssh目錄下 1$ cd ~/.ssh 產生 id_rsa、id_rsa.pub兩key，所有詢問皆按enter即可。 1$ ssh-keygen -t rsa 將id_rsa.pub複製到目的端，會詢問目的端密碼。 1$ scp ~/.ssh/id_rsa.pub xxx@xxx.xxx.xxx.xxx:/xxx/.ssh/ 註：若為第一次對該目的端server使用ssh連線，則會出現Are you sure you want to continue connecting(yes/no)? 此處輸入yes後就會開始連線，並同時將目的地server的public key加入~/.ssh/known_hosts檔案中。下次再對此台server進行ssh連線時就不會再詢問此問題。 轉至目的端，切換至.ssh目錄下 1$ cd ~/.ssh 將id_rsa.pub內容加到authorized_keys中 1$ cat id_rsa.pub &gt;&gt; authorized_keys 再去傳輸檔案就不會要求輸入密碼了。]]></content>
