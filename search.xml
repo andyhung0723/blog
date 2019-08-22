@@ -1,8 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[[計算機基礎] 編碼筆記]]></title>
+    <url>%2Fposts%2FCharacter_Encoding.html</url>
+    <content type="text"><![CDATA[在工作上常遇到編碼的問題，這邊筆記一下幾個常見的編碼。 ASCII&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基於拉丁字母(英文字母)的電腦編碼系統，現在有一個新名字叫 US-ASCII，共定義了128個字元，包括3個無法顯示的字元與128個可顯示字元。33個無法顯示的字元為控制字元，用來操控已經處理過的字元(換頁、空字元、刪除等)，目前大多數已經都廢除不用了。想要在畫面上表示這些字元，可以用 Unicode 或是跳脫字元表示法來表示。ASCII 長度原先是 7bits，但為了滿足需求要表達一些西歐字母，衍生出了一套延伸的編碼系統，稱為 Extended ASCII(EASCII)。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;缺點：因為它只能用來表示數字、英文字母與英式符號，所以現在大部分都採用 Unicode。 EASCII&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;將 ASCII 從 7bits 擴充到 8bits 而衍生出來的，共定義了256個字元(0~255) ISO-8859-1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8bits 編碼，以 ASCII 為基礎。 Window-1252&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8bits 編碼，包含 ISO-8859-1 所有字，但碼位有些不同。 Big5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台灣制定的，後來微軟的 MS950 就是以他為基準創建的，兩者基本上無太大差別(多了碁銹裏墻恒粧嫺和一些日文符號，是參考倚天擴充字集)雙位元組 2bytes，有些異體字沒有被收錄進去(堃、煊、栢…)，有提供造字區。 Unicode&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;為了解決編碼百家爭鳴的情況，誕生了 Unicode，將世上所有的字元符號都收錄其中，它是一個字元集，每個字元皆為 2bytes 大小。但如果像 ASCII 這種只需要用 7bit 就可以表示的字元，每個都給它 2bytes 的話很浪費空間，所以就發展出了 UTF-8、UTF-16、UTF-32 等轉換格式(Unicode Transformation Format)用來實現 Unicode。 UTF-8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UTF-8 就是 Unicode 的其中一種實現方式。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;它的特點就是根據字元在 Unicode 中的代號，變化本身編碼的長度，但都是以 8bits(1bytes) 為一個單位來伸縮。像是ASCII字元如果用 UTF-8 編碼就會只占用 1bytes，中文字可能就會占用到 2~3bytes。 Little endian 和 Big endian&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 UCS-2 格式(可以想成就是 UTF-16 編碼，也就是 2bytes)中有一個叫做”ZERO WIDTH NO-BREAK SPACE” 的字符，它會在文件的最前面加上2個 bytes，用來決定文中每個字元的編碼第一個位元組要在前還是第二個位元組要在前。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一個位元組在前就稱為 Big endian。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二個位元組在前就稱為 Little endian。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這兩個bytes的標記也稱為 BOM(Byte Order Mark)。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某些文字編輯器中也會在 UTF-8 時在文件最前面加上 BOM 標記，可是 UTF-8 不會有字節順序的問題，所以在 UTF-8 中使用 BOM 標記的用途只是讓別的編輯器知道你現在是用 UTF-8 編碼，但很多程式語言或是 HTML 等並不會自己排除 BOM 標記，所以使用 UTF-8 編碼要特別注意這點。 ANSI&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是 Windows 系統中特有的一個名詞，並不是一種獨立的編碼系統，在不同語系 Windows 系統的系統中，ANSI 的編碼就不同，它會根據你的系統的語系，來對應到微軟自己不同的 Windows Code Page 編碼，到 Windows Command 下 chcp 就可以知道目前用的 Windows Code Page，像語系是台灣的話預設就會是Windows Code Pages 950(就是常聽到的MS950)。]]></content>
+      <categories>
+        <category>計算機基礎</category>
+      </categories>
+      <tags>
+        <tag>Computer Science</tag>
+        <tag>Character-Encoding</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[[JavaScript] 深入JS - 作用域]]></title>
-    <url>%2Fposts%2F7e348710.html</url>
+    <url>%2Fposts%2FJavaScript-Core_Scope.html</url>
     <content type="text"><![CDATA[重新認識 JavaScript 的作用域 何謂作用域 ?有「作用」的區「域」，顧名思義在宣告一個變數時，它們在程式中哪些地方有辦法被存取到，這些地方就稱為這個變數的作用域。 如圖，在 JavaScript 中，紅框部分就稱為 hi 變數的作用域 靜態作用域與動態作用域 靜態? 動態?&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在大部分的程式語言中，靜態與動態是一個形容詞，可以套用在很多名詞上，例如：靜態變數、動態變數、靜態函式、動態函式，就連程式語言也有分靜態語言與動態語言。雖然這兩個形容詞好像一天到晚出現在各種地方，但其主要代表的概念是差不多的。靜態是指程式在開始執行前某些特性就已經決定了，不會也不可以在程式執行中對這個特性進行改變；反之，動態就是程式在執行中的時候，才會決定某些特性。這樣看起來可能會有點抽象，下面談到作用域時會清楚一點。 靜態作用域與動態作用域&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;靜態作用域，又稱為語法作用域(Lexical Scope)，其特性是語法解析時就已經確定作用域。意思就是程式執行前就已經確定了它能夠被存取的地方，且不會再改變。如果在該作用域中找不到某個變數時，就會自動往上一層查找。&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;與之相對的是動態作用域，其特性是進行函式調用的時才決定它的作用域。意思就是要等到程式執行到函數被呼叫時，才會決定函數中變數的作用域。123456789var value = 1;function fn1() &#123; console.log(value);&#125;function fn2() &#123; var value = 2; fn1();&#125;fn2(); &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上這段程式，如果在靜態作用域的語言中執行，將會在 fn1 中先查找有無 value 變數，若找不到就會往上一層的全域進行查找，因此最終會輸出「1」。但若是在動態作用域的語言中執行，將會在呼叫 fn1 的 fn2 中查找 value，因此會輸出「2」。 靜態作用域種類根據劃分「域」的界線，可分為以下幾種： 全局作用域簡稱「全域」，變數的作用域範圍為整個程式碼。 如圖，在 JavaScript 中，name 變數的作用域為整個程式碼，因此稱 name 為全域變數 函數作用域變數在函數內部宣告，且作用域只在函數內部。 如圖，在 JavaScript 中，hi 變數的作用域為 sayHi 這個函式包起來的區域，因此 hi 又可稱為區域變數 區塊作用域變數在區塊包起來的區域宣告， 且作用域範圍為區塊包起來的區域。 如圖，在 JavaScript 中，變數 i 宣告在 for 區塊內，所以只在 for 區塊內能夠存取 講了這麼多，最後只要知道以下結論就好： JavaScript 是採用語法作用域，ES6 以前只有全局作用域與函式作用域，ES6 以後 let 與 const 為區塊作用域。]]></content>
       <categories>
         <category>JavaScript</category>
@@ -13,7 +25,7 @@
   </entry>
   <entry>
     <title><![CDATA[[AIX] SCP 不用密碼傳輸檔案]]></title>
-    <url>%2Fposts%2Fcaa411b8.html</url>
+    <url>%2Fposts%2FSCP_None_Password.html</url>
     <content type="text"><![CDATA[在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。 方式在來源端產生SSH Key，並將公鑰加到目的端的authorized_keys檔案中。 步驟 在來源端先切換至.ssh目錄下 1$ cd ~/.ssh 產生 id_rsa、id_rsa.pub兩key，所有詢問皆按enter即可。 1$ ssh-keygen -t rsa 將id_rsa.pub複製到目的端，會詢問目的端密碼。 1$ scp ~/.ssh/id_rsa.pub xxx@xxx.xxx.xxx.xxx:/xxx/.ssh/ 註：若為第一次對該目的端server使用ssh連線，則會出現Are you sure you want to continue connecting(yes/no)? 此處輸入yes後就會開始連線，並同時將目的地server的public key加入~/.ssh/known_hosts檔案中。下次再對此台server進行ssh連線時就不會再詢問此問題。 轉至目的端，切換至.ssh目錄下 1$ cd ~/.ssh 將id_rsa.pub內容加到authorized_keys中 1$ cat id_rsa.pub &gt;&gt; authorized_keys 再去傳輸檔案就不會要求輸入密碼了。]]></content>
       <categories>
         <category>SSH</category>

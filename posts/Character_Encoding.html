@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="SSH,SCP,不用密碼,SCP 不用密碼傳輸檔案,AIX">
+  <meta name="keywords" content="Character-Encoding,ASCII,UTF-8,Big5,Unicode,ANSI">
 
 
 
@@ -80,18 +80,18 @@
 
 
 
-<meta name="description" content="在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。">
-<meta name="keywords" content="SSH,SCP,不用密碼,SCP 不用密碼傳輸檔案,AIX">
+<meta name="description" content="在工作上常遇到編碼的問題，這邊筆記一下幾個常見的編碼。">
+<meta name="keywords" content="Character-Encoding,ASCII,UTF-8,Big5,Unicode,ANSI">
 <meta property="og:type" content="article">
-<meta property="og:title" content="[AIX] SCP 不用密碼傳輸檔案">
-<meta property="og:url" content="https://andyhung0723.github.io/posts/caa411b8.html">
+<meta property="og:title" content="[計算機基礎] 編碼筆記">
+<meta property="og:url" content="https://andyhung0723.github.io/posts/Character_Encoding.html">
 <meta property="og:site_name" content="小安迪的玩具間">
-<meta property="og:description" content="在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。">
+<meta property="og:description" content="在工作上常遇到編碼的問題，這邊筆記一下幾個常見的編碼。">
 <meta property="og:locale" content="zh-tw">
-<meta property="og:updated_time" content="2019-03-06T14:40:59.663Z">
+<meta property="og:updated_time" content="2019-08-22T14:09:52.737Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="[AIX] SCP 不用密碼傳輸檔案">
-<meta name="twitter:description" content="在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。">
+<meta name="twitter:title" content="[計算機基礎] 編碼筆記">
+<meta name="twitter:description" content="在工作上常遇到編碼的問題，這邊筆記一下幾個常見的編碼。">
 
 
 
@@ -121,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="https://andyhung0723.github.io/posts/caa411b8.html">
+  <link rel="canonical" href="https://andyhung0723.github.io/posts/Character_Encoding.html">
 
 
 
 
 
-  <title>[AIX] SCP 不用密碼傳輸檔案 | 小安迪的玩具間</title>
+  <title>[計算機基礎] 編碼筆記 | 小安迪的玩具間</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -314,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://andyhung0723.github.io/posts/caa411b8.html">
+    <link itemprop="mainEntityOfPage" href="https://andyhung0723.github.io/posts/Character_Encoding.html">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Andy Hung">
@@ -331,7 +331,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">[AIX] SCP 不用密碼傳輸檔案</h2>
+          <h2 class="post-title" itemprop="name headline">[計算機基礎] 編碼筆記</h2>
         
 
         <div class="post-meta">
@@ -343,8 +343,8 @@
               
                 <span class="post-meta-item-text">發表於</span>
               
-              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-03-06T00:00:00+08:00">
-                2019-03-06
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-08-22T00:00:00+08:00">
+                2019-08-22
               </time>
             
 
@@ -366,8 +366,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/SSH/" itemprop="url" rel="index">
-                    <span itemprop="name">SSH</span>
+                  <a href="/categories/計算機基礎/" itemprop="url" rel="index">
+                    <span itemprop="name">計算機基礎</span>
                   </a>
                 </span>
 
@@ -384,8 +384,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/posts/caa411b8.html#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/caa411b8.html" itemprop="commentCount"></span>
+                <a href="/posts/Character_Encoding.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/Character_Encoding.html" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -413,33 +413,18 @@
       
 
       
-        <blockquote class="blockquote-center"><p>在工作上遇到有此需求，所以將方式記錄下來。因為我沒有AIX，所以此處用CentOS模擬。</p>
+        <blockquote class="blockquote-center"><p>在工作上常遇到編碼的問題，這邊筆記一下幾個常見的編碼。</p>
 </blockquote>
 <a id="more"></a>
-<h2 id="方式"><a href="#方式" class="headerlink" title="方式"></a>方式</h2><p>在來源端產生SSH Key，並將公鑰加到目的端的authorized_keys檔案中。</p>
-<h2 id="步驟"><a href="#步驟" class="headerlink" title="步驟"></a>步驟</h2><ol>
-<li><p>在來源端先切換至.ssh目錄下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>產生 id_rsa、id_rsa.pub兩key，所有詢問皆按enter即可。 </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>將id_rsa.pub複製到目的端，會詢問目的端密碼。</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ scp ~/.ssh/id_rsa.pub xxx@xxx.xxx.xxx.xxx:/xxx/.ssh/</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<blockquote>
-<p>註：若為第一次對該目的端server使用ssh連線，則會出現<font color="red">Are you sure you want to continue connecting(yes/no)?</font> 此處輸入yes後就會開始連線，並同時將目的地server的public key加入~/.ssh/known_hosts檔案中。下次再對此台server進行ssh連線時就不會再詢問此問題。</p>
-</blockquote>
-<ol start="4">
-<li><p>轉至目的端，切換至.ssh目錄下</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> ~/.ssh</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>將id_rsa.pub內容加到authorized_keys中</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ cat id_rsa.pub &gt;&gt; authorized_keys</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>再去傳輸檔案就不會要求輸入密碼了。</p>
+<h1 id="ASCII"><a href="#ASCII" class="headerlink" title="ASCII"></a>ASCII</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;基於拉丁字母(英文字母)的電腦編碼系統，現在有一個新名字叫 <strong>US-ASCII</strong>，共定義了<strong>128個</strong>字元，包括3個無法顯示的字元與128個可顯示字元。33個無法顯示的字元為控制字元，用來操控已經處理過的字元(換頁、空字元、刪除等)，目前大多數已經都廢除不用了。想要在畫面上表示這些字元，可以用 Unicode 或是跳脫字元表示法來表示。ASCII 長度原先是 7bits，但為了滿足需求要表達一些西歐字母，衍生出了一套延伸的編碼系統，稱為 Extended ASCII(EASCII)。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>缺點：</strong>因為它只能用來表示數字、英文字母與英式符號，所以現在大部分都採用 Unicode。</p>
+<h1 id="EASCII"><a href="#EASCII" class="headerlink" title="EASCII"></a>EASCII</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;將 ASCII 從 7bits 擴充到 8bits 而衍生出來的，共定義了256個字元(0~255)</p>
+<h1 id="ISO-8859-1"><a href="#ISO-8859-1" class="headerlink" title="ISO-8859-1"></a>ISO-8859-1</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8bits 編碼，以 ASCII 為基礎。</p>
+<h1 id="Window-1252"><a href="#Window-1252" class="headerlink" title="Window-1252"></a>Window-1252</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8bits 編碼，包含 ISO-8859-1 所有字，但碼位有些不同。</p>
+<h1 id="Big5"><a href="#Big5" class="headerlink" title="Big5"></a>Big5</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;台灣制定的，後來微軟的 MS950 就是以他為基準創建的，兩者基本上無太大差別(多了碁銹裏墻恒粧嫺和一些日文符號，是參考倚天擴充字集)<br>雙位元組 2bytes，有些異體字沒有被收錄進去(堃、煊、栢…)，有提供造字區。</p>
+<h1 id="Unicode"><a href="#Unicode" class="headerlink" title="Unicode"></a>Unicode</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;為了解決編碼百家爭鳴的情況，誕生了 Unicode，將世上所有的字元符號都收錄其中，它是一個字元集，每個字元皆為 2bytes 大小。但如果像 ASCII 這種只需要用 7bit 就可以表示的字元，每個都給它 2bytes 的話很浪費空間，所以就發展出了 UTF-8、UTF-16、UTF-32 等轉換格式(Unicode Transformation Format)用來實現 Unicode。</p>
+<h1 id="UTF-8"><a href="#UTF-8" class="headerlink" title="UTF-8"></a>UTF-8</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;UTF-8 就是 Unicode 的其中一種實現方式。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;它的特點就是根據字元在 Unicode 中的代號，變化本身編碼的長度，但都是以 8bits(1bytes) 為一個單位來伸縮。像是ASCII字元如果用 UTF-8 編碼就會只占用 1bytes，中文字可能就會占用到 2~3bytes。</p>
+<h2 id="Little-endian-和-Big-endian"><a href="#Little-endian-和-Big-endian" class="headerlink" title="Little endian 和 Big endian"></a>Little endian 和 Big endian</h2><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在 UCS-2 格式(可以想成就是 UTF-16 編碼，也就是 2bytes)中有一個叫做”ZERO WIDTH NO-BREAK SPACE” 的字符，它會在文件的最前面加上2個 bytes，用來決定文中每個字元的編碼第一個位元組要在前還是第二個位元組要在前。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第一個位元組在前就稱為 Big endian。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;第二個位元組在前就稱為 Little endian。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;這兩個bytes的標記也稱為 <strong>BOM(Byte Order Mark)</strong>。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;某些文字編輯器中也會在 UTF-8 時在文件最前面加上 BOM 標記，可是 UTF-8 不會有字節順序的問題，所以在 UTF-8 中使用 BOM 標記的用途只是讓別的編輯器知道你現在是用 UTF-8 編碼，但很多程式語言或是 HTML 等並不會自己排除 BOM 標記，所以使用 UTF-8 編碼要特別注意這點。</p>
+<h1 id="ANSI"><a href="#ANSI" class="headerlink" title="ANSI"></a>ANSI</h1><p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;是 Windows 系統中特有的一個名詞，並不是一種獨立的編碼系統，在不同語系 Windows 系統的系統中，ANSI 的編碼就不同，它會根據你的系統的語系，來對應到微軟自己不同的 Windows Code Page 編碼，到 Windows Command 下 chcp 就可以知道目前用的 Windows Code Page，像語系是台灣的話預設就會是Windows Code Pages 950(就是常聽到的MS950)。</p>
 
       
     </div>
@@ -457,9 +442,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/SSH/" rel="tag"># SSH</a>
+            <a href="/tags/Computer-Science/" rel="tag"># Computer Science</a>
           
-            <a href="/tags/AIX/" rel="tag"># AIX</a>
+            <a href="/tags/Character-Encoding/" rel="tag"># Character-Encoding</a>
           
         </div>
       
@@ -490,8 +475,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/posts/DominoOnDocker.html" rel="next" title="[Docker] 建立 Domino Server Container">
-                <i class="fa fa-chevron-left"></i> [Docker] 建立 Domino Server Container
+              <a href="/posts/JavaScript-Core_Scope.html" rel="next" title="[JavaScript] 深入JS - 作用域">
+                <i class="fa fa-chevron-left"></i> [JavaScript] 深入JS - 作用域
               </a>
             
           </div>
@@ -499,10 +484,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/posts/7e348710.html" rel="prev" title="[JavaScript] 深入JS - 作用域">
-                [JavaScript] 深入JS - 作用域 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -592,7 +573,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">文章</span>
                 </a>
               </div>
@@ -603,7 +584,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">分類</span>
                 </a>
               </div>
@@ -614,7 +595,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">標籤</span>
                 </a>
               </div>
@@ -663,7 +644,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#方式"><span class="nav-number">1.</span> <span class="nav-text">方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#步驟"><span class="nav-number">2.</span> <span class="nav-text">步驟</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#ASCII"><span class="nav-number">1.</span> <span class="nav-text">ASCII</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#EASCII"><span class="nav-number">2.</span> <span class="nav-text">EASCII</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ISO-8859-1"><span class="nav-number">3.</span> <span class="nav-text">ISO-8859-1</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Window-1252"><span class="nav-number">4.</span> <span class="nav-text">Window-1252</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Big5"><span class="nav-number">5.</span> <span class="nav-text">Big5</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Unicode"><span class="nav-number">6.</span> <span class="nav-text">Unicode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#UTF-8"><span class="nav-number">7.</span> <span class="nav-text">UTF-8</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Little-endian-和-Big-endian"><span class="nav-number">7.1.</span> <span class="nav-text">Little endian 和 Big endian</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#ANSI"><span class="nav-number">8.</span> <span class="nav-text">ANSI</span></a></li></ol></div>
             
 
           </div>
@@ -835,9 +816,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://andyhung0723.github.io/posts/caa411b8.html';
-          this.page.identifier = 'posts/caa411b8.html';
-          this.page.title = '[AIX] SCP 不用密碼傳輸檔案';
+          this.page.url = 'https://andyhung0723.github.io/posts/Character_Encoding.html';
+          this.page.identifier = 'posts/Character_Encoding.html';
+          this.page.title = '[計算機基礎] 編碼筆記';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://andyhung0723.disqus.com/embed.js';

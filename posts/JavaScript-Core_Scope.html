@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="BackEnd Beginner, Domino, Java">
+  <meta name="keywords" content="JavaScript 作用域,JS 作用域">
 
 
 
@@ -80,17 +80,23 @@
 
 
 
-<meta name="description" content="跟著感覺走">
-<meta name="keywords" content="BackEnd Beginner, Domino, Java">
-<meta property="og:type" content="website">
-<meta property="og:title" content="小安迪的玩具間">
-<meta property="og:url" content="https://andyhung0723.github.io/tags/Domino-on-Docker-Container/index.html">
+<meta name="description" content="重新認識 JavaScript 的作用域">
+<meta name="keywords" content="JavaScript 作用域,JS 作用域">
+<meta property="og:type" content="article">
+<meta property="og:title" content="[JavaScript] 深入JS - 作用域">
+<meta property="og:url" content="https://andyhung0723.github.io/posts/JavaScript-Core_Scope.html">
 <meta property="og:site_name" content="小安迪的玩具間">
-<meta property="og:description" content="跟著感覺走">
+<meta property="og:description" content="重新認識 JavaScript 的作用域">
 <meta property="og:locale" content="zh-tw">
+<meta property="og:image" content="https://i.imgur.com/w05MV4Z.png">
+<meta property="og:image" content="https://i.imgur.com/7wpXtHm.png">
+<meta property="og:image" content="https://i.imgur.com/7wpXtHm.png">
+<meta property="og:image" content="https://i.imgur.com/7wpXtHm.png">
+<meta property="og:updated_time" content="2019-08-22T13:27:33.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="小安迪的玩具間">
-<meta name="twitter:description" content="跟著感覺走">
+<meta name="twitter:title" content="[JavaScript] 深入JS - 作用域">
+<meta name="twitter:description" content="重新認識 JavaScript 的作用域">
+<meta name="twitter:image" content="https://i.imgur.com/w05MV4Z.png">
 
 
 
@@ -120,13 +126,13 @@
 
 
 
-  <link rel="canonical" href="https://andyhung0723.github.io/tags/Domino-on-Docker-Container/">
+  <link rel="canonical" href="https://andyhung0723.github.io/posts/JavaScript-Core_Scope.html">
 
 
 
 
 
-  <title>標籤: Domino on Docker Container | 小安迪的玩具間</title>
+  <title>[JavaScript] 深入JS - 作用域 | 小安迪的玩具間</title>
   
 <script>
   window.fbAsyncInit = function() {
@@ -163,7 +169,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
@@ -299,59 +305,291 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>Domino on Docker Container<small>標籤</small>
-        </h2>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://andyhung0723.github.io/posts/JavaScript-Core_Scope.html">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Andy Hung">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/me.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="小安迪的玩具間">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/posts/DominoOnDocker.html" itemprop="url">
-              
-                <span itemprop="name">[Docker] 建立 Domino Server Container</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">[JavaScript] 深入JS - 作用域</h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-12-09T00:00:00+08:00" content="2018-12-09">
-          12-09
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">發表於</span>
+              
+              <time title="創建於" itemprop="dateCreated datePublished" datetime="2019-08-20T00:00:00+08:00">
+                2019-08-20
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分類於</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/posts/JavaScript-Core_Scope.html#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="posts/JavaScript-Core_Scope.html" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-    </div>
+      
 
+      
+        <blockquote class="blockquote-center"><p>重新認識 JavaScript 的作用域</p>
+</blockquote>
+<a id="more"></a>
+<h1 id="何謂作用域"><a href="#何謂作用域" class="headerlink" title="何謂作用域 ?"></a>何謂作用域 ?</h1><p>有「作用」的區「域」，顧名思義在宣告一個變數時，它們在程式中哪些地方有辦法被存取到，這些地方就稱為這個變數的作用域。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/w05MV4Z.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，紅框部分就稱為 hi 變數的作用域</td>
+</tr>
+</tbody>
+</table>
+<h1 id="靜態作用域與動態作用域"><a href="#靜態作用域與動態作用域" class="headerlink" title="靜態作用域與動態作用域"></a>靜態作用域與動態作用域</h1><ul>
+<li><h2 id="靜態-動態"><a href="#靜態-動態" class="headerlink" title="靜態?  動態?"></a>靜態?  動態?</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;在大部分的程式語言中，<strong>靜態</strong>與<strong>動態</strong>是一個形容詞，可以套用在很多名詞上，例如：靜態變數、動態變數、靜態函式、動態函式，就連程式語言也有分靜態語言與動態語言。雖然這兩個形容詞好像一天到晚出現在各種地方，但其主要代表的概念是差不多的。<strong>靜態</strong>是指程式在開始執行前某些特性就已經決定了，不會也不可以在程式執行中對這個特性進行改變；反之，<strong>動態</strong>就是程式在執行中的時候，才會決定某些特性。這樣看起來可能會有點抽象，下面談到作用域時會清楚一點。</li>
+<li><h2 id="靜態作用域與動態作用域-1"><a href="#靜態作用域與動態作用域-1" class="headerlink" title="靜態作用域與動態作用域"></a>靜態作用域與動態作用域</h2>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>靜態作用域</strong>，又稱為<strong>語法作用域(Lexical Scope)</strong>，其特性是語法解析時就已經確定作用域。意思就是程式執行前就已經確定了它能夠被存取的地方，且不會再改變。如果在該作用域中找不到某個變數時，就會自動往上一層查找。<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;與之相對的是<strong>動態作用域</strong>，其特性是進行函式調用的時才決定它的作用域。意思就是要等到程式執行到函數被呼叫時，才會決定函數中變數的作用域。<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(value);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">2</span>;</span><br><span class="line">    fn1();</span><br><span class="line">&#125;</span><br><span class="line">fn2();</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;以上這段程式，如果在靜態作用域的語言中執行，將會在 fn1 中先查找有無 value 變數，若找不到就會往上一層的全域進行查找，因此最終會輸出「1」。但若是在動態作用域的語言中執行，將會在呼叫 fn1 的 fn2 中查找 value，因此會輸出「2」。</p>
+<h1 id="靜態作用域種類"><a href="#靜態作用域種類" class="headerlink" title="靜態作用域種類"></a>靜態作用域種類</h1><p>根據劃分「域」的界線，可分為以下幾種：</p>
+<ul>
+<li><h2 id="全局作用域"><a href="#全局作用域" class="headerlink" title="全局作用域"></a>全局作用域</h2>簡稱「全域」，變數的作用域範圍為整個程式碼。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/7wpXtHm.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，name 變數的作用域為整個程式碼，因此稱 name 為<strong>全域變數</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h2 id="函數作用域"><a href="#函數作用域" class="headerlink" title="函數作用域"></a>函數作用域</h2>變數在函數內部宣告，且作用域只在函數內部。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/7wpXtHm.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，hi 變數的作用域為 sayHi 這個函式包起來的區域，因此 hi 又可稱為<strong>區域變數</strong></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><h2 id="區塊作用域"><a href="#區塊作用域" class="headerlink" title="區塊作用域"></a>區塊作用域</h2>變數在區塊包起來的區域宣告， 且作用域範圍為區塊包起來的區域。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:center"><img src="https://i.imgur.com/7wpXtHm.png" alt=""></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">如圖，在 JavaScript 中，變數 i 宣告在 for 區塊內，所以只在 for 區塊內能夠存取</td>
+</tr>
+</tbody>
+</table>
+<p>講了這麼多，最後只要知道以下結論就好：</p>
+<div style="text-align: center"><br><p style="font-size: 20px;">JavaScript 是採用<strong>語法作用域</strong>，ES6 以前只有<strong>全局作用域</strong>與<strong>函式作用域</strong>，ES6 以後 let 與 const 為<strong>區塊作用域</strong>。</p><br></div>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/JavaScript/" rel="tag"># JavaScript</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+          <div class="social-like">
+            
+
+            
+              <div class="fb_like">
+                <div class="fb-like" data-layout="button_count" data-share="true"></div>
+              </div>
+            
+          </div>
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/posts/SCP_None_Password.html" rel="next" title="[AIX] SCP 不用密碼傳輸檔案">
+                <i class="fa fa-chevron-left"></i> [AIX] SCP 不用密碼傳輸檔案
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/posts/Character_Encoding.html" rel="prev" title="[計算機基礎] 編碼筆記">
+                [計算機基礎] 編碼筆記 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
+
+
+    <div class="post-spread">
+      
+    </div>
   
-
+  </div>
+  
 
           </div>
           
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+
+  
+
+
 
         </div>
         
@@ -372,8 +610,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目錄
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            本站概覽
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -451,6 +698,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#何謂作用域"><span class="nav-number">1.</span> <span class="nav-text">何謂作用域 ?</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#靜態作用域與動態作用域"><span class="nav-number">2.</span> <span class="nav-text">靜態作用域與動態作用域</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#靜態-動態"><span class="nav-number">2.1.</span> <span class="nav-text">靜態?  動態?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#靜態作用域與動態作用域-1"><span class="nav-number">2.2.</span> <span class="nav-text">靜態作用域與動態作用域</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#靜態作用域種類"><span class="nav-number">3.</span> <span class="nav-text">靜態作用域種類</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局作用域"><span class="nav-number">3.1.</span> <span class="nav-text">全局作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函數作用域"><span class="nav-number">3.2.</span> <span class="nav-text">函數作用域</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#區塊作用域"><span class="nav-number">3.3.</span> <span class="nav-text">區塊作用域</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -593,6 +856,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
@@ -610,6 +877,18 @@
       <script id="dsq-count-scr" src="https://andyhung0723.disqus.com/count.js" async></script>
     
 
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://andyhung0723.github.io/posts/JavaScript-Core_Scope.html';
+          this.page.identifier = 'posts/JavaScript-Core_Scope.html';
+          this.page.title = '[JavaScript] 深入JS - 作用域';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://andyhung0723.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
     
 
   
